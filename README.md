@@ -1,8 +1,24 @@
-# Python console
+# **Python console**
 
-- console v pythonu
-- funguje pouze na win
+- Console v pythonu
+- Funguje pouze na win
 
 ## Install
 
-- nainstalujte [python](https://www.python.org/)
+- Nainstalujte [python](https://www.python.org/)
+- Otevřete python soubor
+- Zde se vám zobrazí info
+
+## Commands
+    TISK-vytiskne input
+    POMOC-pošle příkazy
+    UBDATE-napíše update
+    ODEJIT-odejde
+    VYMAZAT-vymaže
+    CMD-startne nový terminál
+    MATRIX-hodí matrix screen
+    APP-spustí danou aplikaci
+        KALKULACKA-kalkulačka
+        MADLIB-madlib hra
+        HESLO-generace hesel
+        KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
