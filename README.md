@@ -1,7 +1,7 @@
 # **Python console**
 
 - Console v pythonu
-- Funguje pouze na win
+- Testováno na windows 11
 
 ## Install
 
@@ -10,15 +10,15 @@
 - Zde se vám zobrazí info
 
 ## Commands
-    TISK-vytiskne input
-    POMOC-pošle příkazy
-    UBDATE-napíše update
-    ODEJIT-odejde
-    VYMAZAT-vymaže
-    CMD-startne nový terminál
-    MATRIX-hodí matrix screen
-    APP-spustí danou aplikaci
-        KALKULACKA-kalkulačka
-        MADLIB-madlib hra
-        HESLO-generace hesel
-        KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+APP-spustí danou aplikaci
+    KALKULACKA-kalkulačka
+    MADLIB-madlib hra
+    HESLO-generace hesel
+    KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+    VULGARISM-napíše random vulgarismus
+CMD/VERZE-startne nový terminál
+TISK-vytiskne input
+ODEJIT-odejde
+POMOC-pošle příkazy
+UBDATE-napíše update
+VYMAZAT-vymaže
