@@ -46,13 +46,13 @@ def core():
 
     elif command == "pomoc":
         print("""
+APP-spustí danou aplikaci
+CMD/VERZE-startne nový terminál
 TISK-vytiskne input
+ODEJIT-odejde
 POMOC-pošle příkazy
 UBDATE-napíše update
-ODEJIT-odejde
 VYMAZAT-vymaže
-CMD-startne nový terminál
-APP-spustí danou aplikaci
             """)
         core()
 
@@ -366,10 +366,11 @@ APP-spustí danou aplikaci
 
         elif application == "pomoc":
                 print("""
-        KALKULACKA-kalkulačka
-        MADLIB-madlib hra
-        HESLO-generace hesel
-        KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+    KALKULACKA-kalkulačka
+    MADLIB-madlib hra
+    HESLO-generace hesel
+    KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+    VULGARISM-napíše random vulgarismus
                             """)
                 core()
 
