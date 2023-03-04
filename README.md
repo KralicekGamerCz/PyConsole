@@ -10,6 +10,7 @@
 - Zde se vám zobrazí info
 
 ## Commands
+```
 APP-spustí danou aplikaci
     KALKULACKA-kalkulačka
     MADLIB-madlib hra
@@ -17,9 +18,9 @@ APP-spustí danou aplikaci
     KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
     VULGARISM-napíše random vulgarismus
 CMD/VERZE-startne nový terminál
-
 TISK-vytiskne input
 ODEJIT-odejde
 POMOC-pošle příkazy
 UBDATE-napíše update
 VYMAZAT-vymaže
+```
