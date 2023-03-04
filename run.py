@@ -1,14 +1,15 @@
 # PyConsole
-# Version 1.1
+# Version 1.2
 # ©2023 by KralicekGamer
 
-# import
+
 import string
 import random
 import shutil
 import time
 import sys
 import os
+
 
 # colors
 def prRed(skk):
@@ -28,9 +29,11 @@ def prLightGray(skk):
 def prBlack(skk):
     print("\033[98m {}\033[00m" .format(skk))
 
+
 # welcome message
 def welcome():
-    print("PyConsole [Version 1.1] \n©2023 by KralicekGamer\n")
+    print("PyConsole [Version 1.2] \n©2023 by KralicekGamer\n")
+
 
 # core(commands)
 def core():
@@ -209,6 +212,7 @@ APP-spustí danou aplikaci
         application = input("  >>> ")
 
         if application == "kalkulacka":
+            try:
                 number_1 = int(input('První číslo: '))
                 number_2 = int(input('Druhé číslo: '))
 
@@ -230,6 +234,10 @@ APP-spustí danou aplikaci
 
                 core()
 
+            finally:
+                prRed("Error")
+                core()
+
         elif application == "madlib":
                 secret_world = input("Create secret world: ")
 
@@ -246,6 +254,7 @@ APP-spustí danou aplikaci
                 madlib()
 
         elif application == "heslo":
+            try:
                 length = int(input("Délka hesla: "))
 
                 print('''\nZde vyber, co chceš mít v hesle za znaky
@@ -282,49 +291,78 @@ APP-spustí danou aplikaci
                 print("Tvoje heslo je " + "".join(password))
                 core()
 
+            finally:
+                prRed("Error")
+                core()
+
         elif application == "kámen-nůžky-papír":
-                def kamen_nuzky_papir():
+            def kamen_nuzky_papir():
 
-                    choices = ["kámen", "nůžky", "papír", "odejit"]
+                choices = ["kámen", "nůžky", "papír"]
+                odejit = ["odejit"]
 
-                    computer_choice = random.choice(choices)
+                computer_choice = random.choice(choices)
 
+                player_choice = input("Kámen, nůžky, nebo papír: ").lower()
+
+                while player_choice not in choices:
                     player_choice = input("Kámen, nůžky, nebo papír: ").lower()
 
-                    while player_choice not in choices:
-                        player_choice = input("Kámen, nůžky, nebo papír: ").lower()
+                if odejit == "odejit":
+                    core()
 
-                    if player_choice == "odejit":
-                        core()
-
-                    if player_choice == computer_choice:
-                        print("Remíza!")
-                    elif player_choice == "kámen":
-                        if computer_choice == "nůžky":
-                            print("Vyhrál jsi!")
-                        else:
-                            print("Prohrál jsi.")
-                    elif player_choice == "nůžky":
-                        if computer_choice == "papír":
-                            print("Vyhrál jsi!")
-                        else:
-                            print("Prohrál jsi.")
-                    elif player_choice == "papír":
-                        if computer_choice == "kámen":
-                            print("Vyhrál jsi!")
-                        else:
-                            print("Prohrál jsi.")
-
-                    print("Bot si vybral: " + computer_choice)
-
-                    if knp_play == "p":
-                        kamen_nuzky_papir()
-
+                if player_choice == computer_choice:
+                    print("Remíza!")
+                elif player_choice == "kámen":
+                    if computer_choice == "nůžky":
+                        print("Vyhrál jsi!")
                     else:
-                        core()
+                        print("Prohrál jsi.")
+                elif player_choice == "nůžky":
+                    if computer_choice == "papír":
+                        print("Vyhrál jsi!")
+                    else:
+                        print("Prohrál jsi.")
+                elif player_choice == "papír":
+                    if computer_choice == "kámen":
+                        print("Vyhrál jsi!")
+                    else:
+                        print("Prohrál jsi.")
 
-                knp_play = input("Chceš hrát jednou, nebo pořád [j/p] ")
-                kamen_nuzky_papir()
+                print("Bot si vybral: " + computer_choice)
+                knp_1()
+
+            def knp_1():
+                knp = input("Hrát znovu? [y/n] ")
+                if knp == "y":
+                    kamen_nuzky_papir()
+
+                else:
+                    core()
+
+            kamen_nuzky_papir()
+
+        elif application == "vulgarism":
+            vulgarism = ["blb", "blbina", "blbý", "bordel", "bordel na kolečkách", "bordelmamá", "buzerant", "buzík",
+                         "být na dvě věci: na nic a na hovno", "cecek", "cyp", "čubčí", "syn", "čumět", "čurák",
+                         "dementi", "do hajzlu", "do piče", "do prdele", "držet držku", "držet hubu", "držet klapačku",
+                         "držet kušnu", "držet tlamu", "držet zobák", "flundra", "flus", "frnda", "frňák", "hajtra",
+                         "hajzl", "hajzlpapír", "haksna", "hovínko", "hovno", "hovnocuc", "huba", "chcanky", "chcát",
+                         "chcípnout", "chlastat", "chuj", "idiot", "jebačka", "jebat", "jít bodnout", "jít do hajzlu",
+                         "jít do prdele", "jít vycpat", "kokot", "kokotina", "kretén", "ksindl", "kunda", "kurevník",
+                         "kurva", "kurva drát", "kurvafix", "kurvit", "kušna", "lempl", "lofas", "mamrd", "morda",
+                         "mrd", "mrdačka", "mrdat", "mrdka", "mrdník", "mrcha", "nasraný", "nasrat", "oddělat",
+                         "odkráglovat", "odkrouhnout", "odprásknout", "omrdat", "pajzl", "pazneht", "péro", "piča",
+                         "pičus", "pizda", "píča", "píčovina", "píčus", "píchat", "podělaný", "podělat", "pojebaný",
+                         "posrat", "prcat", "prd", "prdel", "prdelka", "prdelolezec", "prdět", "prdnout", "prevét",
+                         "průser", "přefiknout", "přeříznout", "rozesraný", "rozesrat", "rozmrdaný", "rypák", "sajrajt",
+                         "sere pes", "sračka", "sralbotka", "sranec", "sráč", "srágora", "srát", "šoustat", "šuk",
+                         "šukačka", "šukat", "šukézní", "šulin", "šulín", "tma jako v prdeli", "trtkat", "ty píčo",
+                         "vlezdoprdelista", "vyjebaný", "vyprdnout", "vysrat", "zajebaný", "zasranec", "zásun",
+                         "zbouchnout", "zkurvenec", "zkurvený", "zkurvit", "zkurvysyn", "zmrd", "zobák zpíčený", "žrát"]
+
+            print(random.choice(vulgarism))
+            core()
 
         elif application == "pomoc":
                 print("""
@@ -339,10 +377,10 @@ APP-spustí danou aplikaci
                 prRed("Invalid command")
                 core()
 
-
     else:
         prRed("Invalid command")
         core()
+
 
 # run
 welcome()
