@@ -5,11 +5,11 @@
 
 ## Install
 
-# Windows
+### Windows
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete run.py
 
-# Linux
+### Linux
 - Otevřete terminál
 - Zadejte `python3 run.py`
 
