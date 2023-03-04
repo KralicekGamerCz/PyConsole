@@ -1,13 +1,17 @@
 # **Python console**
 
 - Console v pythonu
-- Testováno na windows 11
+- Testováno na Linuxu a Windowsu
 
 ## Install
 
+# Windows
 - Nainstalujte [python](https://www.python.org/)
-- Otevřete python soubor
-- Zde se vám zobrazí info
+- Otevřete run.py
+
+# Linux
+- Otevřete terminál
+- Zadejte `python3 run.py`
 
 ## Commands
 ```
