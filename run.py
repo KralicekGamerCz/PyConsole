@@ -224,17 +224,12 @@ VYMAZAT-vymaže
             core()
 
     elif command == "update":
-        update = input("Chceš pokračovat? Toto je beta funkce. [y/n] ")
-        if update == "y":
-            url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/run.py'
-            soubor = 'run.py'
-            urllib.request.urlretrieve(url, soubor)
-            print("Soubor byl stažen. Otevři znovu program.")
-            time.sleep(1)
-            exit()
-
-        else:
-            core()
+        url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/run.py'
+        soubor = 'run.py'
+        urllib.request.urlretrieve(url, soubor)
+        prRed("Znovu otevři program")
+        time.sleep(1)
+        exit()
 
     if command == "app":
 
