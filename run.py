@@ -1,5 +1,5 @@
 # PyConsole
-# Version 1.2
+# Version 1.3
 # ©2023 by KralicekGamer
 
 
@@ -9,6 +9,7 @@ import shutil
 import time
 import sys
 import os
+import urllib.request
 
 
 # colors
@@ -32,7 +33,7 @@ def prBlack(skk):
 
 # welcome message
 def welcome():
-    print("PyConsole [Version 1.2] \n©2023 by KralicekGamer\n")
+    print("PyConsole [Version 1.3] \n©2023 by KralicekGamer\n")
 
 
 # core(commands)
@@ -48,6 +49,7 @@ def core():
         print("""
 APP-spustí danou aplikaci
 CMD/VERZE-startne nový terminál
+KOČKA-vytiskne soubor do console
 TISK-vytiskne input
 ODEJIT-odejde
 POMOC-pošle příkazy
@@ -206,6 +208,33 @@ VYMAZAT-vymaže
 
         if __name__ == "__main__":
             doit()
+
+    elif command == "kočka":
+        try:
+            nazev = input("Zadej název souboru: ")
+            soubor = open(nazev, "r")
+            file = soubor.read()
+            print(file)
+            print("\n")
+            soubor.close()
+            core()
+
+        finally:
+            prRed("Invalid file name")
+            core()
+
+    elif command == "update":
+        update = input("Chceš pokračovat? Toto je beta funkce. [y/n] ")
+        if update == "y":
+            url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/run.py'
+            soubor = 'run.py'
+            urllib.request.urlretrieve(url, soubor)
+            print("Soubor byl stažen. Otevři znovu program.")
+            time.sleep(1)
+            exit()
+
+        else:
+            core()
 
     if command == "app":
 
@@ -386,3 +415,4 @@ VYMAZAT-vymaže
 # run
 welcome()
 core()
+
