@@ -22,9 +22,10 @@ APP-spustí danou aplikaci
     KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
     VULGARISM-napíše random vulgarismus
 CMD/VERZE-startne nový terminál
+KOČKA-vypíše do console vybraný soubor
 TISK-vytiskne input
 ODEJIT-odejde
 POMOC-pošle příkazy
-UBDATE-napíše update
+UPDATE-aktualizuje aplikaci
 VYMAZAT-vymaže
 ```
