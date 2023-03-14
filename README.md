@@ -7,7 +7,7 @@
 
 ### Windows
 - Nainstalujte [python](https://www.python.org/)
-- Otevřete run.py
+- Otevřete run.py 
 
 ### Linux
 - Otevřete terminál
