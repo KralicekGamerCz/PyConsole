@@ -1,5 +1,5 @@
 # PyConsole
-# Version 1.3
+# Version 1.3.1
 # ©2023 by KralicekGamer
 
 
