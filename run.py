@@ -53,7 +53,7 @@ KOČKA-vytiskne soubor do console
 TISK-vytiskne input
 ODEJIT-odejde
 POMOC-pošle příkazy
-UBDATE-napíše update
+UPDATE-aktualizuje aplikaci
 VYMAZAT-vymaže
             """)
         core()
