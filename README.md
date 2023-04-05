@@ -1,7 +1,7 @@
 # **Python console**
 
 - Console v pythonu
-- Testováno na windows a linux
+- Testováno na windows
 
 ## Install
 
