@@ -1,8 +1,7 @@
 # **Python console**
 
 - Console v pythonu
-- Testováno na windows
-- Linux moc nefunguje
+- Testováno na windows a linux
 
 ## Install
 
