@@ -28,8 +28,10 @@ HODINY-otevře online hodiny
 KOČKA-vytiskne soubor do console
 SYSTEM-vypíše informace o systému
 TISK-vytiskne input
+TEA-tea mode
 ODEJIT-odejde
 POMOC-pošle příkazy
 UPDATE-aktualizuje aplikaci
 VYMAZAT-vymaže
+WEB-otevře můj web
 ```
