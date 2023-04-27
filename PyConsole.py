@@ -1,5 +1,5 @@
 # PyConsole
-# Version 1.4
+# Version 1.5
 # ©2023 by KralicekGamer
 
 
@@ -39,31 +39,26 @@ def welcome():
 
 
 # verze
-verze = "version 1.4"
+verze = "version 1.5"
 
 
 # logo
 def logo():
     prGreen("""
-    |------|   \     /         |------  |-------|   |\      |   |--------   |-------|   |           |-------
-    |      |    \   /          |        |       |   | \     |   |           |       |   |           |
-    |      |     \ /           |        |       |   |  \    |   |           |       |   |           |
-    |------|      |            |        |       |   |   \   |   |-------|   |       |   |           |-------
-    |             |            |        |       |   |    \  |           |   |       |   |           |
-    |             |            |        |       |   |     \ |           |   |       |   |           |
-    |             |            |------  |-------|   |      \|   --------|   |-------|   |-------    |-------""")
+██████╗ ██╗   ██╗ █████╗  █████╗ ███╗  ██╗ ██████╗ █████╗ ██╗     ███████╗
+██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗████╗ ██║██╔════╝██╔══██╗██║     ██╔════╝
+██████╔╝ ╚████╔╝ ██║  ╚═╝██║  ██║██╔██╗██║╚█████╗ ██║  ██║██║     █████╗  
+██╔═══╝   ╚██╔╝  ██║  ██╗██║  ██║██║╚████║ ╚═══██╗██║  ██║██║     ██╔══╝  
+██║        ██║   ╚█████╔╝╚█████╔╝██║ ╚███║██████╔╝╚█████╔╝███████╗███████╗
+╚═╝        ╚═╝    ╚════╝  ╚════╝ ╚═╝  ╚══╝╚═════╝  ╚════╝ ╚══════╝╚══════╝
+""")
 
 
 # core(commands)
 def core():
     command = input(username + "@local$ ")
 
-    if command == "tisk":
-        tisk = input(username + "@local-[tisk]$ ")
-        print(tisk)
-        core()
-
-    elif command == "pomoc":
+    if command == "pomoc":
         print("""
 APP-spustí danou aplikaci
 ČAS-ukáže datum a čas
@@ -73,113 +68,16 @@ HODINY-otevře online hodiny
 KOČKA-vytiskne soubor do console
 SYSTEM-vypíše informace o systému
 TISK-vytiskne input
+TEA-tea mode
 ODEJIT-odejde
 POMOC-pošle příkazy
 UPDATE-aktualizuje aplikaci
 VYMAZAT-vymaže
+WEB-otevře můj web
             """)
         core()
 
-    elif command == "verze":
-        welcome()
-        core()
-
-    elif command == "odejit":
-        odejit = input("Odejít? [y/n] ")
-        print("\n")
-        logo()
-        time.sleep(2)
-
-        if odejit == "y":
-            exit()
-
-        else:
-            core()
-
-    elif command == "vymazat":
-        try:
-            os.system('cls')
-            welcome()
-            core()
-
-        finally:
-            prRed("Jsi na linuxu. Nelze zavírat a otevírat okna. Použij windows.")
-
-    elif command == "sex":
-        print("A co sis jako myslel, že se stane")
-        core()
-
-    elif command == "cmd":
-        print("")
-        welcome()
-        core()
-
-    elif command == "kočka":
-        try:
-            nazev = input("Zadej název souboru: ")
-            soubor = open(nazev, "r")
-            file = soubor.read()
-            print(file)
-            print("\n")
-            soubor.close()
-            core()
-
-        finally:
-            prRed("Error")
-            core()
-
-    elif command == "ubdate":
-        try:
-            url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/PyConsole.py'
-            soubor = 'PyConsole.py'
-            urllib.request.urlretrieve(url, soubor)
-            prRed("Znovu otevři program")
-            time.sleep(1)
-            exit()
-
-        except:
-            prRed("Error")
-            core()
-
-    elif command == "credits":
-        logo()
-        print("\n")
-        print("PyConsole byla napsána uživatelem KralicekGamer")
-        time.sleep(1.5)
-        print("Pár slov autora:")
-        time.sleep(1.5)
-        print("Toto je můj první project v pythonu a také stávající a na kterém pracuji")
-        time.sleep(1.5)
-        print("Plánuji udělat KralicekOS nebo PyOS")
-        time.sleep(1.5)
-        print("Děkuji za podporu a moc si ji vážím")
-        print("\n")
-        time.sleep(1.5)
-        print("KralicekGamer")
-        core()
-
-    elif command == "hodiny":
-        webbrowser.open_new_tab('clock.html')
-        print("Otevírám hodiny\n")
-        core()
-
-    elif command == "system":
-        print("\nInformace o systému\n")
-        print("Systém: " + platform.system())
-        print("Relese: " + platform.release())
-        print("Platform version: " + platform.version())
-        print("Machine version: " + platform.machine())
-        print("Název PC: " + socket.gethostname())
-        print("Ip adresa: " + socket.gethostbyname(socket.gethostname()))
-        print("Procesor: " + platform.processor() + "\n")
-        core()
-
-    elif command == "čas":
-        now = datetime.now()
-
-        print(now.strftime("%d/%m/%Y %H:%M:%S"))
-
-    if command == "app":
+    elif command == "app":
 
         application = input(username + "@local-[app]$ ")
         if application == "kalkulacka":
@@ -210,29 +108,29 @@ VYMAZAT-vymaže
                 core()
 
         elif application == "madlib":
-                secret_world = input("Create secret world: ")
+            secret_world = input("Create secret world: ")
 
-                def madlib():
-                    guess = input("Enter guess: ")
+            def madlib():
+                guess = input("Enter guess: ")
 
-                    if guess == secret_world:
-                        print("You win")
-                        core()
+                if guess == secret_world:
+                    print("You win")
+                    core()
 
-                    else:
-                        madlib()
+                else:
+                    madlib()
 
-                madlib()
+            madlib()
 
         elif application == "heslo":
             try:
                 length = int(input("Délka hesla: "))
 
                 print('''\nZde vyber, co chceš mít v hesle za znaky
-    1. Čísla
-    2. Písmena
-    3. Specialání znaky
-    4. Vygenerovat heslo''')
+      1. Čísla
+      2. Písmena
+      3. Specialání znaky
+      4. Vygenerovat heslo''')
 
                 character_list = ""
 
@@ -336,18 +234,174 @@ VYMAZAT-vymaže
             core()
 
         elif application == "pomoc":
-                print("""
-    KALKULACKA-kalkulačka
-    MADLIB-madlib hra
-    HESLO-generace hesel
-    KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
-    VULGARISM-napíše random vulgarismus
-                            """)
-                core()
+            print("""
+      KALKULACKA-kalkulačka
+      MADLIB-madlib hra
+      HESLO-generace hesel
+      KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+      VULGARISM-napíše random vulgarismus
+                              """)
+            core()
 
         else:
-                prRed("Invalid command")
-                core()
+            prRed("Invalid command")
+            core()
+
+    elif command == "čas":
+        now = datetime.now()
+
+        print(now.strftime("%d/%m/%Y %H:%M:%S"))
+        core()
+
+    elif command == "cmd":
+        print("")
+        welcome()
+        core()
+
+    elif command == "credits":
+        logo()
+        print("\n")
+        print("""
+PyConsole byla vytvořena uživatelem KralicekGamer
+Tato console je součástí Project13
+Děkuju za podporu 
+""")
+        core()
+
+    elif command == "hodiny":
+        webbrowser.open_new_tab('clock.html')
+        print("Otevírám hodiny\n")
+        core()
+
+    elif command == "kočka":
+        try:
+            nazev = input("Zadej název souboru: ")
+            soubor = open(nazev, "r")
+            file = soubor.read()
+            print(file)
+            print("\n")
+            soubor.close()
+            core()
+
+        finally:
+            prRed("Error")
+            core()
+
+    elif command == "sex":
+        print("A co sis jako myslel, že se stane")
+        core()
+
+    elif command == "system":
+        print("\nInformace o systému\n")
+        print("Systém: " + platform.system())
+        print("Relese: " + platform.release())
+        print("Platform version: " + platform.version())
+        print("Machine version: " + platform.machine())
+        print("Název PC: " + socket.gethostname())
+        print("Ip adresa: " + socket.gethostbyname(socket.gethostname()))
+        print("Procesor: " + platform.processor() + "\n")
+        core()
+
+    elif command == "tisk":
+        tisk = input(username + "@local-[tisk]$ ")
+        print(tisk)
+        core()
+
+    elif command == "tea":
+        tea_spusit = input("Opravdu spusit režim tea? [y/n] ")
+        if tea_spusit == "y":
+
+            #core
+            def jadro():
+                kommand = input(username + "@lokal$ ")
+
+                if kommand == "vitysknout":
+                    tisk = input(username + "@lokal-[tysk]$ ")
+                    print(tisk)
+                    jadro()
+
+                elif kommand == "odejyt":
+                    odejit = input("Odejýt? [y/n] ")
+                    print("\n")
+                    logo()
+                    time.sleep(2)
+
+                    if odejit == "y":
+                        exit()
+
+                    else:
+                        jadro()
+
+                elif kommand == "vimazat":
+                    os.system('cls')
+                    welcome()
+                    jadro()
+
+                elif kommand == "segs":
+                    print("A co sys jako mislel že se stane")
+                    jadro()
+
+                elif kommand == "hodyni":
+                    webbrowser.open_new_tab('clock.html')
+                    print("Otevírám ghodini\n")
+                    jadro()
+
+                elif kommand == "sistema":
+                    print("\nYnformace o sistému\n")
+                    print("Sistém: " + platform.system())
+                    print("Relís: " + platform.release())
+                    print("Platform veršn: " + platform.version())
+                    print("Mašín veršm: " + platform.machine())
+                    print("Název PíCí: " + socket.gethostname())
+                    print("Ajpí adresa: " + socket.gethostbyname(socket.gethostname()))
+                    print("Procesor: " + platform.processor() + "\n")
+                    jadro()
+
+                elif kommand == "časi":
+                    now = datetime.now()
+
+                    print(now.strftime("%d/%m/%Y %H:%M:%S"))
+                    jadro()
+
+                else:
+                    prRed("Ynvalyd kommand")
+                    jadro()
+            jadro()
+
+        else:
+            core()
+
+    elif command == "odejit":
+        odejit = input("Odejít? [y/n] ")
+
+        if odejit == "y":
+            logo()
+            time.sleep(2)
+            exit()
+
+        else:
+            core()
+
+    elif command == "verze":
+        welcome()
+        core()
+
+    elif command == "update":
+        url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/PyConsole.py'
+        soubor = 'PyConsole.py'
+        urllib.request.urlretrieve(url, soubor)
+        prRed("Znovu otevři program")
+        time.sleep(1)
+        exit()
+
+    elif command == "vymazat":
+        os.system('cls')
+        welcome()
+        core()
+
+    elif command == "web":
+        webbrowser.open('https://kralicekgamer.ddns.net/')
+        core()
 
     else:
         prRed("Invalid command")
@@ -356,5 +410,13 @@ VYMAZAT-vymaže
 
 # run
 welcome()
-username = input("Username: ")
+username_file = "username.txt"
+if os.path.exists(username_file):
+    with open(username_file, "r") as file:
+        username = file.read().strip()
+else:
+    username = input("Username: ")
+    with open(username_file, "w") as file:
+        file.write(username)
+
 core()
