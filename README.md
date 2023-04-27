@@ -1,7 +1,8 @@
 # **Python console**
 
-- Console v pythonu
-- Testováno na windows
+- Toto je console v pythonu
+- Je založená na přikazech z windows a linux terminálu
+- Testována na windowsu (linux nedoporučuji používat)
 
 ## Install
 
@@ -9,7 +10,7 @@
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete PyConsole.py
 
-### Linux
+### Linux 
 - Otevřete terminál
 - Zadejte `python3 PyConsole.py`
 
