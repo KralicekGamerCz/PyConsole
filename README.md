@@ -2,7 +2,7 @@
 
 - Toto je console v pythonu
 - Je založená na přikazech z windows a linux terminálu
-- Pro každý OS je samostatná verze
+- Je tu spoustu samostatných verzí
 
 ## Install
 
