@@ -1,8 +1,9 @@
 # PyConsole
-# Version 1.5.1 windows
+# Version 1.6 windows
 # ©2023 by KralicekGamer
 
 
+# import
 import string
 import random
 import time
@@ -11,40 +12,65 @@ import urllib.request
 import webbrowser
 import platform
 import socket
+
 from datetime import datetime
+from tkinter import messagebox
+from tkinter import *
+from tkinter import filedialog
 
 
-# colors
-def prRed(skk):
-    print("\033[91m {}\033[00m" .format(skk))
-def prGreen(skk):
-    print("\033[92m {}\033[00m" .format(skk))
-def prYellow(skk):
-    print("\033[93m {}\033[00m" .format(skk))
-def prLightPurple(skk):
-    print("\033[94m {}\033[00m" .format(skk))
-def prPurple(skk):
-    print("\033[95m {}\033[00m" .format(skk))
-def prCyan(skk):
-    print("\033[96m {}\033[00m" .format(skk))
-def prLightGray(skk):
-    print("\033[97m {}\033[00m" .format(skk))
-def prBlack(skk):
-    print("\033[98m {}\033[00m" .format(skk))
+# barvy
+"""
+formáty
+    reset = \033[0m
+    bold = \033[01m
+    disable = \033[02m
+    underline = \033[04m
+    reverse = \033[07m
+    strikethrough = \033[09m
+    invisible = \033[08m
+
+text
+    black = \033[30m
+    red = \033[31m
+    green = \033[32m
+    orange = \033[33m
+    blue = \033[34m
+    purple = \033[35m
+    cyan = \033[36m
+    lightgrey = \033[37m
+    darkgrey = \033[90m
+    lightred = \033[91m
+    lightgreen = \033[92m
+    yellow = \033[93m
+    lightblue = \033[94m
+    pink = \033[95m
+    lightcyan = \033[96m
+
+pozadí
+    black = \033[40m
+    red = \033[41m
+    green = \033[42m
+    orange = \033[43m
+    blue = \033[44m
+    purple = \033[45m
+    cyan = \033[46m
+    lightgrey = \033[47m
+"""
 
 
 # welcome message
 def welcome():
-    print("\nPyConsole " + verze + "\n©2023 by KralicekGamer\n")
+    print("PyConsole " + verze + "\n©2023 by KralicekGamer\n")
 
 
 # verze
-verze = "version 1.5.1 windows"
+verze = "version 1.6 windows"
 
 
 # logo
 def logo():
-    prGreen("""
+    print("\033[32m" + """
 ██████╗ ██╗   ██╗ █████╗  █████╗ ███╗  ██╗ ██████╗ █████╗ ██╗     ███████╗
 ██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗████╗ ██║██╔════╝██╔══██╗██║     ██╔════╝
 ██████╔╝ ╚████╔╝ ██║  ╚═╝██║  ██║██╔██╗██║╚█████╗ ██║  ██║██║     █████╗  
@@ -54,24 +80,28 @@ def logo():
 """)
 
 
-# core(commands)
+# core
 def core():
-    command = input(username + "@local$ ")
+    command = input("\033[94m" + username + "\033[35m" + "@" + "\033[32m" + "local" + "\033[0m" + "$ ")
 
     if command == "pomoc":
         print("""
 APP-spustí danou aplikaci
+    KALKULACKA-kalkulačka
+    MADLIB-madlib hra
+    HESLO-generace hesel
+    KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
 ČAS-ukáže datum a čas
-CMD/VERZE-startne nový terminál
+CMD-startne nový terminál
 CREDITS-credity
 HODINY-otevře online hodiny
 KOČKA-vytiskne soubor do console
 SYSTEM-vypíše informace o systému
 TISK-vytiskne input
-TEA-tea mode
 ODEJIT-odejde
 POMOC-pošle příkazy
 UPDATE-aktualizuje aplikaci
+VERZE-ukáže aktuální verzi terminálu
 VYMAZAT-vymaže
 WEB-otevře můj web
             """)
@@ -79,8 +109,16 @@ WEB-otevře můj web
 
     elif command == "app":
 
-        application = input(username + "@local-[app]$ ")
-        if application == "kalkulacka":
+        application = input("\033[94m" + username + "\033[35m" + "@" + "\033[32m" + "local" + "" + "\033[33m" + "[app]" + "\033[0m" + "$ ")
+        if application == "pomoc":
+            print("""
+    KALKULACKA-kalkulačka
+        MADLIB-madlib hra
+    HESLO-generace hesel
+    KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+                                  """)
+
+        elif application == "kalkulacka":
             try:
                 number_1 = int(input('První číslo: '))
                 number_2 = int(input('Druhé číslo: '))
@@ -104,130 +142,118 @@ WEB-otevře můj web
                 core()
 
             finally:
-                prRed("Error")
+                print("\033[31m" + "Error\n")
                 core()
 
         elif application == "madlib":
             secret_world = input("Create secret world: ")
 
-            def madlib():
-                guess = input("Enter guess: ")
+            def app_madlib():
+                app_madlib_guess = input("Enter guess: ")
 
-                if guess == secret_world:
+                if app_madlib_guess == secret_world:
                     print("You win")
                     core()
 
                 else:
-                    madlib()
+                    app_madlib()
 
-            madlib()
+            app_madlib()
 
         elif application == "heslo":
             try:
                 length = int(input("Délka hesla: "))
 
                 print('''\nZde vyber, co chceš mít v hesle za znaky
-      1. Čísla
-      2. Písmena
-      3. Specialání znaky
-      4. Vygenerovat heslo''')
+    1. Čísla
+    2. Písmena
+    3. Specialání znaky
+    4. Vygenerovat heslo''')
 
-                character_list = ""
+                app_password_character_list = ""
 
                 while True:
                     choice = int(input("Vyber číslo: "))
                     if choice == 1:
 
-                        character_list += string.ascii_letters
+                        app_password_character_list += string.ascii_letters
                     elif choice == 2:
 
-                        character_list += string.digits
+                        app_password_character_list += string.digits
                     elif choice == 3:
 
-                        character_list += string.punctuation
+                        app_password_character_list += string.punctuation
                     elif choice == 4:
                         break
                     else:
                         print("Prosím zadej správný znak")
 
-                password = []
+                app_password_password = []
 
                 for i in range(length):
-                    randomchar = random.choice(character_list)
+                    randomchar = random.choice(app_password_character_list)
 
-                    password.append(randomchar)
+                    app_password_password.append(randomchar)
 
-                print("Tvoje heslo je " + "".join(password))
+                print("Tvoje heslo je " + "".join(app_password_password))
                 core()
 
             finally:
-                prRed("Error")
+                print("\033[31m" + "Error\n")
                 core()
 
         elif application == "kámen-nůžky-papír":
-            def kamen_nuzky_papir():
+            def app_knp():
 
-                choices = ["kámen", "nůžky", "papír"]
-                odejit = ["odejit"]
+                app_knp_choices = ["kámen", "nůžky", "papír"]
 
-                computer_choice = random.choice(choices)
+                app_knp_computer_choice = random.choice(app_knp_choices)
 
-                player_choice = input("Kámen, nůžky, nebo papír: ").lower()
+                app_knp_player_choice = input("Kámen, nůžky, nebo papír: ").lower()
 
-                while player_choice not in choices:
-                    player_choice = input("Kámen, nůžky, nebo papír: ").lower()
+                while app_knp_player_choice not in app_knp_choices:
+                    app_knp_player_choice = input("Kámen, nůžky, nebo papír: ").lower()
 
-                if odejit == "odejit":
-                    core()
-
-                if player_choice == computer_choice:
+                if app_knp_player_choice == app_knp_computer_choice:
                     print("Remíza!")
-                elif player_choice == "kámen":
-                    if computer_choice == "nůžky":
+                elif app_knp_player_choice == "kámen":
+                    if app_knp_computer_choice == "nůžky":
                         print("Vyhrál jsi!")
                     else:
                         print("Prohrál jsi.")
-                elif player_choice == "nůžky":
-                    if computer_choice == "papír":
+                elif app_knp_player_choice == "nůžky":
+                    if app_knp_computer_choice == "papír":
                         print("Vyhrál jsi!")
                     else:
                         print("Prohrál jsi.")
-                elif player_choice == "papír":
-                    if computer_choice == "kámen":
+                elif app_knp_player_choice == "papír":
+                    if app_knp_computer_choice == "kámen":
                         print("Vyhrál jsi!")
                     else:
                         print("Prohrál jsi.")
 
-                print("Bot si vybral: " + computer_choice)
-                knp_1()
+                print("Bot si vybral: " + app_knp_computer_choice)
+                app_knp_pa()
 
-            def knp_1():
-                knp = input("Hrát znovu? [y/n] ")
-                if knp == "y":
-                    kamen_nuzky_papir()
+            def app_knp_pa():
+                app_knp_pa_vyber = input("Hrát znovu? [y/n] ")
+                if app_knp_pa_vyber == "y":
+                    app_knp()
 
                 else:
                     core()
 
-            kamen_nuzky_papir()
-
-        elif application == "pomoc":
-            print("""
-      KALKULACKA-kalkulačka
-      MADLIB-madlib hra
-      HESLO-generace hesel
-      KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
-                              """)
+            app_knp()
             core()
 
         else:
-            prRed("Invalid command")
+            print("\033[31m" + "Invalid command\n")
             core()
 
     elif command == "čas":
-        now = datetime.now()
+        cmd_cas_cas = datetime.now()
 
-        print(now.strftime("%d/%m/%Y %H:%M:%S"))
+        print(cmd_cas_cas.strftime("%d/%m/%Y %H:%M:%S"))
         core()
 
     elif command == "cmd":
@@ -236,13 +262,8 @@ WEB-otevře můj web
         core()
 
     elif command == "credits":
-        logo()
-        print("\n")
-        print("""
-PyConsole byla vytvořena uživatelem KralicekGamer
-Tato console je součástí Project13
-Děkuju za podporu 
-""")
+        messagebox.showinfo("Credits", "Děkuji za stáhnutí PyConsole. Toto je můj menší project. "
+                                       "Koukni na můj web https://kralicekgamer.ddns.net/.")
         core()
 
     elif command == "hodiny":
@@ -252,16 +273,16 @@ Děkuju za podporu
 
     elif command == "kočka":
         try:
-            nazev = input("Zadej název souboru: ")
-            soubor = open(nazev, "r")
-            file = soubor.read()
-            print(file)
+            cmd_kocka_filename = input("Zadej název souboru: ")
+            cmd_kocka_file = open(cmd_kocka_filename, "r")
+            cmd_kocka_file_content = cmd_kocka_file.read()
+            print(cmd_kocka_file_content)
             print("\n")
-            soubor.close()
+            cmd_kocka_file.close()
             core()
 
         finally:
-            prRed("Error")
+            print("\033[31m" + "Error\n")
             core()
 
     elif command == "sex":
@@ -280,78 +301,81 @@ Děkuju za podporu
         core()
 
     elif command == "tisk":
-        tisk = input(username + "@local-[tisk]$ ")
-        print(tisk)
+        cmd_tisk_content = input("\033[94m" + username + "\033[35m" + "@" + "\033[32m" + "local" + "" + "\033[33m" + "[tisk]" + "\033[0m" + "$ ")
+        print(cmd_tisk_content)
         core()
 
-    elif command == "tea":
-        tea_spusit = input("Opravdu spusit režim tea? [y/n] ")
-        if tea_spusit == "y":
+    elif command == "text editor":
+        print("\033[31m" + "Textový editor je otevřen")
 
-            #core
-            def jadro():
-                kommand = input(username + "@lokal$ ")
-
-                if kommand == "vitysknout":
-                    tisk = input(username + "@lokal-[tysk]$ ")
-                    print(tisk)
-                    jadro()
-
-                elif kommand == "odejyt":
-                    odejit = input("Odejýt? [y/n] ")
-                    print("\n")
-                    logo()
-                    time.sleep(2)
-
-                    if odejit == "y":
-                        exit()
-
-                    else:
-                        jadro()
-
-                elif kommand == "vimazat":
-                    os.system('cls')
-                    welcome()
-                    jadro()
-
-                elif kommand == "segs":
-                    print("A co sys jako mislel že se stane")
-                    jadro()
-
-                elif kommand == "hodyni":
-                    webbrowser.open_new_tab('clock.html')
-                    print("Otevírám ghodini\n")
-                    jadro()
-
-                elif kommand == "sistema":
-                    print("\nYnformace o sistému\n")
-                    print("Sistém: " + platform.system())
-                    print("Relís: " + platform.release())
-                    print("Platform veršn: " + platform.version())
-                    print("Mašín veršm: " + platform.machine())
-                    print("Název PíCí: " + socket.gethostname())
-                    print("Ajpí adresa: " + socket.gethostbyname(socket.gethostname()))
-                    print("Procesor: " + platform.processor() + "\n")
-                    jadro()
-
-                elif kommand == "časi":
-                    now = datetime.now()
-
-                    print(now.strftime("%d/%m/%Y %H:%M:%S"))
-                    jadro()
-
+        def cmd_new_file():
+            if len(text.get('1.0', END + '-1c')) > 0:
+                if messagebox.askyesno("Uložit soubor", "Chcete uložit současný soubor?"):
+                    cmd_save_file()
                 else:
-                    prRed("Ynvalyd kommand")
-                    jadro()
-            jadro()
+                    text.delete('1.0', END)
 
-        else:
-            core()
+        def cmd_open_file():
+            cmd_file = filedialog.askopenfile(mode='r')
+            if cmd_file is not None:
+                content = cmd_file.read()
+                text.delete('1.0', END)
+                text.insert(END, content)
+
+        def cmd_save_file():
+            cmd_file = filedialog.asksaveasfile(mode='w')
+            if cmd_file is not None:
+                data = text.get('1.0', END + '-1c')
+                cmd_file.write(data)
+                cmd_file.close()
+
+        def cmd_cut():
+            text.event_generate("<<Cut>>")
+
+        def cmd_copy():
+            text.event_generate("<<Copy>>")
+
+        def cmd_paste():
+            text.event_generate("<<Paste>>")
+
+        def cmd_about():
+            messagebox.showinfo("O aplikaci", "Version 1.0")
+
+        root = Tk()
+        root.title("PyConsole text editor")
+
+        text = Text(root)
+        text.pack()
+
+        menu = Menu(root)
+        root.config(menu=menu)
+
+        file_menu = Menu(menu)
+        menu.add_cascade(label='File', menu=file_menu)
+        file_menu.add_command(label='New', command=cmd_new_file)
+        file_menu.add_command(label='Open', command=cmd_open_file)
+        file_menu.add_command(label='Save', command=cmd_save_file)
+        file_menu.add_separator()
+        file_menu.add_command(label='Exit', command=root.quit)
+
+        edit_menu = Menu(menu)
+        menu.add_cascade(label='Edit', menu=edit_menu)
+        edit_menu.add_command(label='Cut', command=cmd_cut)
+        edit_menu.add_command(label='Copy', command=cmd_copy)
+        edit_menu.add_command(label='Paste', command=cmd_paste)
+
+        about_menu = Menu(menu)
+        menu.add_cascade(label='About', menu=about_menu)
+        about_menu.add_command(label='About', command=cmd_about)
+
+        root.mainloop()
+        core()
 
     elif command == "odejit":
-        odejit = input("Odejít? [y/n] ")
+        cmd_odejit_content = input("\033[91mOdejít? " + "\033[0m[y/n] ")
 
-        if odejit == "y":
+        if cmd_odejit_content == "y":
+            print(30*"\n")
             logo()
             time.sleep(2)
             exit()
@@ -360,15 +384,14 @@ Děkuju za podporu
             core()
 
     elif command == "verze":
-        welcome()
+        messagebox.showinfo("Verze", "PyConsole " + verze)
         core()
 
     elif command == "update":
-        url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/PyConsole.py'
-        soubor = 'PyConsole.py'
-        urllib.request.urlretrieve(url, soubor)
-        prRed("Znovu otevři program")
-        time.sleep(1)
+        cmd_update_url = 'https://raw.githubusercontent.com/KralicekGamerCz/py_console/main/PyConsole-windows.py'
+        cmd_update_file_name = 'PyConsole-windows.py'
+        urllib.request.urlretrieve(cmd_update_url, cmd_update_file_name)
+        messagebox.showinfo("PyConsole update", "Znovu otevři program")
         exit()
 
     elif command == "vymazat":
@@ -381,19 +404,19 @@ Děkuju za podporu
         core()
 
     else:
-        prRed("Invalid command")
+        print("\033[31m" + "Invalid command\n")
         core()
 
 
 # run
 welcome()
-username_file = "username.txt"
-if os.path.exists(username_file):
-    with open(username_file, "r") as file:
+run_username_file = "username.txt"
+if os.path.exists(run_username_file):
+    with open(run_username_file, "r") as file:
         username = file.read().strip()
 else:
     username = input("Username: ")
-    with open(username_file, "w") as file:
+    with open(run_username_file, "w") as file:
         file.write(username)
 
 core()
