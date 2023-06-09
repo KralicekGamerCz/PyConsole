@@ -1,12 +1,12 @@
 # PyConsole
-# Version 1.6 linux
+# Version 1.7 linux
 # ©2023 by KralicekGamer
 
 
 # import
+import time
 import string
 import random
-import time
 import os
 import webbrowser
 import platform
@@ -14,45 +14,42 @@ import socket
 
 from datetime import datetime
 
-
 # barvy
-"""
-formáty
-    reset = \033[0m
-    bold = \033[01m
-    disable = \033[02m
-    underline = \033[04m
-    reverse = \033[07m
-    strikethrough = \033[09m
-    invisible = \033[08m
+# formáty
+reset = "\033[0m"
+bold = "\033[01m"
+disable = "\033[02m"
+underline = "\033[04m"
+reverse = "\033[07m"
+strikethrough = "\033[09m"
+invisible = "\033[08m"
 
-text
-    black = \033[30m
-    red = \033[31m
-    green = \033[32m
-    orange = \033[33m
-    blue = \033[34m
-    purple = \033[35m
-    cyan = \033[36m
-    lightgrey = \033[37m
-    darkgrey = \033[90m
-    lightred = \033[91m
-    lightgreen = \033[92m
-    yellow = \033[93m
-    lightblue = \033[94m
-    pink = \033[95m
-    lightcyan = \033[96m
+# text
+black = "\033[30m"
+red = "\033[31m"
+green = "\033[32m"
+orange = "\033[33m"
+blue = "\033[34m"
+purple = "\033[35m"
+cyan = "\033[36m"
+lightgrey = "\033[37m"
+darkgrey = "\033[90m"
+lightred = "\033[91m"
+lightgreen = "\033[92m"
+yellow = "\033[93m"
+lightblue = "\033[94m"
+pink = "\033[95m"
+lightcyan = "\033[96m"
 
-pozadí
-    black = \033[40m
-    red = \033[41m
-    green = \033[42m
-    orange = \033[43m
-    blue = \033[44m
-    purple = \033[45m
-    cyan = \033[46m
-    lightgrey = \033[47m
-"""
+# pozadí
+bg_black = "\033[40m"
+bg_red = "\033[41m"
+bg_green = "\033[42m"
+bg_orange = "\033[43m"
+bg_blue = "\033[44m"
+bg_purple = "\033[45m"
+bg_cyan = "\033[46m"
+bg_lightgrey = "\033[47m"
 
 
 # welcome message
@@ -61,12 +58,12 @@ def welcome():
 
 
 # verze
-verze = "version 1.6 linux"
+verze = "version 1.7 linux"
 
 
 # logo
 def logo():
-    print("\033[32m" + """
+    print(green + """
 ██████╗ ██╗   ██╗ █████╗  █████╗ ███╗  ██╗ ██████╗ █████╗ ██╗     ███████╗
 ██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗████╗ ██║██╔════╝██╔══██╗██║     ██╔════╝
 ██████╔╝ ╚████╔╝ ██║  ╚═╝██║  ██║██╔██╗██║╚█████╗ ██║  ██║██║     █████╗  
@@ -78,7 +75,7 @@ def logo():
 
 # core
 def core():
-    command = input("\033[94m" + username + "\033[35m" + "@" + "\033[32m" + "local" + "\033[0m" + "$ ")
+    command = input(lightblue + username + purple + "@" + green + "local" + reset + "$ ")
 
     if command == "pomoc":
         print("""
@@ -88,48 +85,64 @@ APP-spustí danou aplikaci
     HESLO-generace hesel
     KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
 ČAS-ukáže datum a čas
-CMD-startne nový terminál
 CREDITS-credity
+DIR-vypíše soubory v aktuální složce
 HODINY-otevře online hodiny
 KOČKA-vytiskne soubor do console
+MKDIR-vytvoří složku 
+PING-pošle odezvu
+RMDIR-smaže složku
 SYSTEM-vypíše informace o systému
 TISK-vytiskne input
 ODEJIT-odejde
 POMOC-pošle příkazy
-VERZE-ukáže verzi terminálu
+VERZE-verze 
 WEB-otevře můj web
+ZATIZENI-zatizi aplikaci a pošle odezvu 
             """)
         core()
 
     elif command == "app":
 
-        application = input("\033[94m" + username + "\033[35m" + "@" + "\033[32m" + "local" + "" + "\033[33m" + "[app]" + "\033[0m" + "$ ")
-        if application == "kalkulacka":
-            try:
-                number_1 = int(input('První číslo: '))
-                number_2 = int(input('Druhé číslo: '))
+        application = input("\033[94m" + username + "\033[35m" + "@" + green + "local" + "" + "\033[33m" + "[app]" + reset + "$ ")
+        if application == "pomoc":
+            print("""
+    KALKULACKA-kalkulačka
+        MADLIB-madlib hra
+    HESLO-generace hesel
+    KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
+                                  """)
 
-                print('{} + {} = '.format(number_1, number_2))
-                print(number_1 + number_2)
-                print("")
+        elif application == "kalkulacka":
+            def add(a, b):
+                return a + b
 
-                print('{} - {} = '.format(number_1, number_2))
-                print(number_1 - number_2)
-                print("")
+            def subtract(a, b):
+                return a - b
 
-                print('{} * {} = '.format(number_1, number_2))
-                print(number_1 * number_2)
-                print("")
+            def multiply(a, b):
+                return a * b
 
-                print('{} / {} = '.format(number_1, number_2))
-                print(number_1 / number_2)
-                print("")
+            def divide(a, b):
+                if b != 0:
+                    return a / b
+                else:
+                    return "Chyba: Nelze dělit nulou."
 
-                core()
+            operation = input("Zadejte operaci (+, -, *, /): ")
+            num1 = float(input("Zadejte první číslo: "))
+            num2 = float(input("Zadejte druhé číslo: "))
 
-            finally:
-                print("\033[31m" + "Error\n")
-                core()
+            if operation == "+":
+                print(add(num1, num2))
+            elif operation == "-":
+                print(subtract(num1, num2))
+            elif operation == "*":
+                print(multiply(num1, num2))
+            elif operation == "/":
+                print(divide(num1, num2))
+            else:
+                print("Chybná operace.")
 
         elif application == "madlib":
             secret_world = input("Create secret world: ")
@@ -185,7 +198,7 @@ WEB-otevře můj web
                 core()
 
             finally:
-                print("\033[31m" + "Error\n")
+                print(red + "Error\n")
                 core()
 
         elif application == "kámen-nůžky-papír":
@@ -230,18 +243,10 @@ WEB-otevře můj web
                     core()
 
             app_knp()
-
-        elif application == "pomoc":
-            print("""
-      KALKULACKA-kalkulačka
-      MADLIB-madlib hra
-      HESLO-generace hesel
-      KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
-                              """)
             core()
 
         else:
-            print("\033[31m" + "Invalid command\n")
+            print(red + "Invalid command\n")
             core()
 
     elif command == "čas":
@@ -250,13 +255,15 @@ WEB-otevře můj web
         print(cmd_cas_cas.strftime("%d/%m/%Y %H:%M:%S"))
         core()
 
-    elif command == "cmd":
-        print("")
-        welcome()
+    elif command == "credits":
+        print("Děkuji za stáhnutí PyConsole. Toto je můj menší project. Koukni na můj web https://nejsem.online")
         core()
 
-    elif command == "credits":
-        print("Děkuji za stáhnutí PyConsole. Toto je můj menší project Koukni na můj web https://kralicekgamer.ddns.net/")
+    elif command == "dir":
+        dir_files = os.listdir('.')
+        for dir_file in dir_files:
+            print(dir_file)
+        print("")
         core()
 
     elif command == "hodiny":
@@ -275,8 +282,40 @@ WEB-otevře můj web
             core()
 
         finally:
-            print("\033[31m" + "Error\n")
+            print(red + "Error\n")
             core()
+
+    elif command == "mkdir":
+        mk_dir_directory_name = input("Název složky: ")
+        os.mkdir(mk_dir_directory_name)
+        print("")
+        core()
+
+    elif command == "rmdir":
+        rm_dir_directory_name = input("Název složky: ")
+        os.rmdir(rm_dir_directory_name)
+        print("")
+        core()
+
+    elif command == "ping":
+        ping_start_time = time.time()
+        print("pong")
+        ping_end_time = time.time()
+        ping_response_time = ping_end_time - ping_start_time
+        if ping_response_time == 0:
+            print("Odezva je: " + green + str(ping_response_time))
+
+        elif ping_response_time > 1:
+            print("Odezva je: " + red + str(ping_response_time))
+
+        elif ping_response_time > 0:
+            print("Odezva je: " + "\033[93m" + str(ping_response_time))
+
+        else:
+            print(red + "Error")
+
+        print("")
+        core()
 
     elif command == "sex":
         print("A co sis jako myslel, že se stane")
@@ -294,7 +333,7 @@ WEB-otevře můj web
         core()
 
     elif command == "tisk":
-        cmd_tisk_content = input("\033[94m" + username + "\033[35m" + "@" + "\033[32m" + "local" + "" + "\033[33m" + "[tisk]" + "\033[0m" + "$ ")
+        cmd_tisk_content = input("\033[94m" + username + "\033[35m" + "@" + green + "local" + "" + "\033[33m" + "[tisk]" + reset + "$ ")
         print(cmd_tisk_content)
         core()
 
@@ -302,7 +341,7 @@ WEB-otevře můj web
         cmd_odejit_content = input("\033[91mOdejít? " + "\033[0m[y/n] ")
 
         if cmd_odejit_content == "y":
-            print(30*"\n")
+            print(30 * "\n")
             logo()
             time.sleep(2)
             exit()
@@ -315,11 +354,33 @@ WEB-otevře můj web
         core()
 
     elif command == "web":
-        webbrowser.open('https://kralicekgamer.ddns.net/')
+        webbrowser.open('https://nejsem.online/')
+        core()
+
+    elif command == "zatizeni":
+        zatizeni_start_time = time.time()
+        print(999999 * "000000000" + reset)
+        zatizeni_end_time = time.time()
+        os.system('cls')
+        welcome()
+        zatizeni_response_time = zatizeni_end_time - zatizeni_start_time
+        if zatizeni_response_time < 1:
+            print("Odezva je: " + green + str(zatizeni_response_time))
+
+        elif zatizeni_response_time < 2:
+            print("Odezva je: " + red + str(zatizeni_response_time))
+
+        elif zatizeni_response_time < 3:
+            print("Odezva je: " + "\033[93m" + str(zatizeni_response_time))
+
+        else:
+            print(red + "Error")
+
+        print("")
         core()
 
     else:
-        print("\033[31m" + "Invalid command\n")
+        print(red + "Invalid command\n")
         core()
 
 
@@ -333,5 +394,4 @@ else:
     username = input("Username: ")
     with open(run_username_file, "w") as file:
         file.write(username)
-
 core()
