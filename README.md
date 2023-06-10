@@ -15,7 +15,7 @@
 
 ### Chat
 - Chat verze 
-- Optimalizovaná pro windows
+- Tato verze už se nevyvíjí 
 
 ## Install
 
