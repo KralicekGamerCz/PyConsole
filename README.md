@@ -24,6 +24,7 @@
 - Tyto verze jsou pro jakékoli os
 - Jsou jedno souborové a optimalitované
 - Nevyvíjí se
+  <br>
 ### Version
 ### _Windows_
 - Optimalizovaná verze pro windows
@@ -36,7 +37,7 @@
 ### _Chat_
 - Chat verze 
 - Tato verze už se nevyvíjí 
-
+ <br>
 ### Install
 
 ### _Windows_
