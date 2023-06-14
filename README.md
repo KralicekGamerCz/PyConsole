@@ -42,7 +42,7 @@
 - Chat verze 
 - Tato verze už se nevyvíjí 
  <br>
- <br>
+
 ### Install
 ### _Windows_
 - Nainstalujte [python](https://www.python.org/)
