@@ -3,31 +3,54 @@
 - Toto je console v pythonu
 - Je založená na přikazech z windows a linux terminálu
 - Slouží k pobavení, normální práce je zde také možná 
+ <br>
+ <br>
 
-## Versions
-### Windows
+# **Versions**
+## 2.x version
+### Info
+- Tyto verze jsou přizpůsobené pro windows
+- Jsou více souborové
+### Install
+
+### _Windows_
+- Nainstalujte [python](https://www.python.org/)
+- Otevřete main.py
+ <br>
+ <br>
+
+## 1.x version
+### Info
+- Tyto verze jsou pro jakékoli os
+- Jsou jedno souborové a optimalitované
+- Nevyvíjí se
+### Version
+### _Windows_
 - Optimalizovaná verze pro windows
 - Plná verze 
 
-### Linux
+### _Linux_
 - Optimalizovaná verze pro linux
 - Není zde to co na linuxu nefunguje(TKinter, atd.)
 
-### Chat
+### _Chat_
 - Chat verze 
 - Tato verze už se nevyvíjí 
 
-## Install
+### Install
 
-### Windows
+### _Windows_
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete PyConsole-windows.py
 
-### Linux 
+### _Linux _
 - Otevřete terminál
 - Zadejte `python3 PyConsole-linux.py`
+<br>
+<br>
 
-## Commands
+
+# Commands
 ```
 APP-spustí danou aplikaci
     KALKULACKA-kalkulačka
@@ -47,7 +70,6 @@ SYSTEM-vypíše informace o systému
 TISK-vytiskne input
 ODEJIT-odejde
 POMOC-pošle příkazy
-UPDATE-aktualizuje aplikaci
 VERZE-ukáže aktuální verzi terminálu
 VYMAZAT-vymaže
 WEB-otevře můj web
