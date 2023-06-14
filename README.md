@@ -27,9 +27,8 @@
 - Jsou jedno souborové a optimalitované
 - Nevyvíjí se
   <br>
+  <br>
   
-
-
 ### Version
 ### _Windows_
 - Optimalizovaná verze pro windows
@@ -43,12 +42,12 @@
 - Chat verze 
 - Tato verze už se nevyvíjí 
  <br>
+ <br>
+ 
 ### Install
-
 ### _Windows_
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete PyConsole-windows.py
-
 ### _Linux _
 - Otevřete terminál
 - Zadejte `python3 PyConsole-linux.py`
