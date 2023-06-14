@@ -11,6 +11,7 @@
 ### Info
 - Tyto verze jsou přizpůsobené pro windows
 - Jsou více souborové
+   <br>
 ### Install
 
 ### _Windows_
