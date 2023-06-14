@@ -27,6 +27,9 @@
 - Jsou jedno souborové a optimalitované
 - Nevyvíjí se
   <br>
+  
+
+
 ### Version
 ### _Windows_
 - Optimalizovaná verze pro windows
