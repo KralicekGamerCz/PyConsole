@@ -11,9 +11,10 @@
 ### Info
 - Tyto verze jsou přizpůsobené pro windows
 - Jsou více souborové
-   <br>
+  <br>
+  <br>
+  
 ### Install
-
 ### _Windows_
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete main.py
