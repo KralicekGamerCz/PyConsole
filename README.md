@@ -48,7 +48,7 @@
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete PyConsole-windows.py
 
-### _Linux _
+### _Linux_
 - Otevřete terminál
 - Zadejte `python3 PyConsole-linux.py`
 <br>
