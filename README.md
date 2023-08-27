@@ -4,19 +4,17 @@
 - Je založená na přikazech z windows a linux terminálu
 - Slouží k pobavení, normální práce je zde také možná 
  <br>
- <br>
 
-### _Info_
+### Info
 - Tyto verze jsou přizpůsobené pro windows
 - Jsou více souborové
   <br>
-  <br>
   
 # Install
-### _Windows_
+### Windows
 - Nainstalujte [python](https://www.python.org/)
 - Otevřete main.py
-
+ <br>
 
 # Commands
 ```
