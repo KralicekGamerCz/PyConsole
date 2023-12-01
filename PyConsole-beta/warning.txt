@@ -1,4 +1,0 @@
-toto je testovací složka
-zde jsou všechny věcí k testování
-nejsou stabilní a jsou to jenom části codu
-sdílím je pro info 
