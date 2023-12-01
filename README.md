@@ -1,3 +1,5 @@
+# **!!NESTABILNÍ PRE-RELESE!!**
+
 # **Python console**
 ### Info
 - Toto je console v pythonu
