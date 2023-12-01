@@ -1,7 +1,7 @@
 # **!!NESTABILNÍ PRE-RELESE!!**
-2.1 -> STABILNÍ RELESE
-
 3.0 -> NESTABILNÍ PRE-RELESE
+
+2.1 -> STABILNÍ RELESE
 
 # **Python console**
 ### Info
