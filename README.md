@@ -1,6 +1,3 @@
-# **In maintence**
-
-
 # **Python console**
 ### Info
 - Toto je console v pythonu
@@ -20,21 +17,21 @@ APP-spustí danou aplikaci
     MADLIB-madlib hra
     HESLO-generace hesel
     KÁMEN-NŮŽKY-PAPÍR-kámen nůžky papír hra
-ČAS-ukáže datum a čas
+CAT-přečetení souboru
+CLEAR-vymaže
 CMD-startne nový terminál
 CREDITS-credity
+CHANGE USER NAME-zmení username
 DIR-vypíše soubory v aktuální složce
-HODINY-otevře online hodiny
-KOČKA-vytiskne soubor do console
+EXIT-odejde
 MKDIR-vytvoří složku 
 PING-pošle odezvu
 RMDIR-smaže složku
 SYSTEM-vypíše informace o systému
-TISK-vytiskne input
-ODEJIT-odejde
+PRINT-vytiskne input
+TEXT EDITOR-textový editor
 POMOC-pošle příkazy
 VERZE-ukáže aktuální verzi terminálu
-VYMAZAT-vymaže
 WEB-otevře můj web
 ZATIZENI-zatizi aplikaci a pošle odezvu 
 ```
