@@ -1,7 +1,6 @@
-PyConsole		            
-Version 3.2		      
-0101320 --> id of file 			           
-©2023 by KralicekGamer --> copyright
+# PyConsole		            
+# Version 3.2		             
+# ©2024 by KralicekGamer
 
 # import
 import os
