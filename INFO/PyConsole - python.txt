@@ -1,0 +1,1 @@
+Doporučuju zpustit script PyConsole - python.bat, který zkontroluje zda je nainstalován python. Pokud není vyzve vás k instalaci.
